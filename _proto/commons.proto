@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package commons;
+
+message Id {
+  string id = 1;
+}

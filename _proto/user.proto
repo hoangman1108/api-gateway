@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package user;
+
+message Id {
+  string id = 1;
+}
+message User{
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string password = 4;
+  int32 age = 5;
+  string createdAt = 6;
+  string updatedAt = 7;
+}
+
+message Users {
+  repeated User users = 1;
+}
+
+message CreateUserInput{
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string age = 4;
+}
+
+message UpdateUserInput{
+  string id = 1;
+  User data = 2;
+}
+
+message Empty{
+
+}
+
+service UsersService{
+  rpc createUser(CreateUserInput) returns (User){}
+  rpc findUserById (Id) returns (User) {}
+  rpc updateUser (UpdateUserInput) returns (User) {}
+  rpc listUsers(Empty) returns (Users){}
+}

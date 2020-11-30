@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import { Observable } from 'rxjs'
 
-import { Id } from "../common/common.interface";
+import { Id } from '../common/common.interface';
 
 export interface User{
   id: string;
